@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect } from "react";
 import { MediaDetailBannerProps } from "types";
 import { useStyle } from "./media-detail.style";
 import { FaPlay } from "react-icons/fa";
@@ -15,8 +15,8 @@ import truncate from "shared/functions/truncate";
 
 export const MediaDetailBanner:FC<MediaDetailBannerProps> = ({media,deactivateMediaDetailBanner,isMovie=true,numOfActors}) => {
   const classes = useStyle()
-  const {data:mediaDetails,isError:mediaError} = useMediaDetailQuery(media!.id,isMovie)
-  const {data:mediaGenres,isError:mediaGenreError} = useMediaGenresQuery(isMovie)
+  const {data:mediaDetails,} = useMediaDetailQuery(media!.id,isMovie)
+  const {data:mediaGenres} = useMediaGenresQuery(isMovie)
 
   //Query Control
   // useEffect(() => {

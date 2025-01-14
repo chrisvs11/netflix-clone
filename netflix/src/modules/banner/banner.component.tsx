@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { useStyles } from "./banner.style";
 import { requests } from "shared/others";
 import { Media } from "types";
@@ -11,7 +11,7 @@ export const Banner:FC = () => {
   
   const classes = useStyles()
   const [movie,setMovie] = useState<Media>()
-  const {data:mediaQuery,isError} = useMediaQuery(requests.fetchTrending,"Top Trending")
+  const {data:mediaQuery} = useMediaQuery(requests.fetchTrending,"Top Trending")
 
   // //QueryControl 
   // useEffect(() => {

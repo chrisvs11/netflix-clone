@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useEffect} from "react";
+import React, { FC, useCallback} from "react";
 import { useStyle } from "./row.style";
 import { Media, RowProps } from "types";
 import { useFilter, useMediaQuery } from "shared/hooks";
@@ -10,7 +10,7 @@ export const Row:FC<RowProps> = ({title,fetchURL,isLargeRow = false,updateMovieD
   const classes = useStyle()
   const baseImageURL = "https://image.tmdb.org/t/p/original"
   const {activeFilter} = useFilter()
-  const {data:mediaQuery,isError} = useMediaQuery(fetchURL,title)
+  const {data:mediaQuery} = useMediaQuery(fetchURL,title)
   
   // //Query Control
   // useEffect(() => {
